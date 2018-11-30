@@ -38,5 +38,19 @@ class GroovyTut{
            println(num);
 		   }  	
 		}
+
+		//factorial recursion using closure
+		//use "call" it will call the function 
+        def factorial = { num -> num<=1? 1 : num * call(num-1)}
+		println(factorial(4));
+
+		//or you have to define the variable first to be able to call the same function
+		def getFactorial
+		getFactorial = { num -> 
+			num <= 1 ? 1 : num * getFactorial(num-1)
+		}
+
+		println(getFactorial(4));
+
 	}
 }
